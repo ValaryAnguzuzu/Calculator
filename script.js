@@ -7,7 +7,7 @@ function appendToDisplay(input) {
   if (display.value === "Error") {
     display.value = "";
   }
-  
+
   // If user starts typing a number after an evaluation, reset display
   if (shouldReset && !isNaN(input)) {
     display.value = ""; // Clear display for numbers only
@@ -32,8 +32,27 @@ function calculate() {
     shouldReset = true;
   } catch (error) {
     display.value = "Error";
+    shouldReset = true;
   }
 }
+
+// Attach event listeners to all buttons
+document.querySelectorAll("button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const value = button.getAttribute("data-value");
+    const action = button.getAttribute("data-action");
+
+    if (action === "calculate") {
+      calculate();
+    } else if (action === "clear") {
+      clearDisplay();
+    } else if (action === "delete") {
+      deleteLastChar();
+    } else {
+      appendToDisplay(value);
+    }
+  });
+});
 
 // Handle keyboard input
 document.addEventListener("keydown", function (event) {
