@@ -3,6 +3,11 @@ let shouldReset = false;
 
 // Append a value to the display
 function appendToDisplay(input) {
+  // If there's an error message, reset the display
+  if (display.value === "Error") {
+    display.value = "";
+  }
+  
   // If user starts typing a number after an evaluation, reset display
   if (shouldReset && !isNaN(input)) {
     display.value = ""; // Clear display for numbers only
