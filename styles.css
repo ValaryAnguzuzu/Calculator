@@ -1,16 +1,68 @@
 button {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    border: none;
-    background-color: grey;
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: none;
+  background-color: grey;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-#keys{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+button:hover {
+  background-color: rgb(191, 170, 170);
+}
+button:active {
+  transform: scale(0.95);
+  background-color: rgb(235, 215, 215);
+
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 25px;
+}
+#calculator {
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(63, 58, 58);
+  border-radius: 15px;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+#display {
+  width: 100%;
+  padding: 20px;
+  font-size: 5rem;
+  text-align: left;
+  color: white;
+  border: none;
+  background-color: grey;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(210, 190, 190);
+}
+
+.operator-btn{
+    background-color: orange;
+
+}
+
+.operator-btn:hover{
+    background-color: rgb(228, 153, 14);
+
+}
+
+.operator-btn:active{
+    background-color: rgb(250, 179, 48);
+
 }
