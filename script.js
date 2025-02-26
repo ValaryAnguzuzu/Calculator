@@ -14,7 +14,26 @@ function appendToDisplay(input) {
   }
   shouldReset = false;
   display.value += input;
+
+  // Call live calculation
+//   liveCalculate();
 }
+
+// Function to calculate the result dynamically
+// function liveCalculate() {
+//   try {
+//     const result = eval(display.value);
+//     if (!isNaN(result) && display.value !== "") {
+//       display.placeholder = `= ${result}`; // Show live result in placeholder
+//     } else {
+//       display.placeholder = ""; // Clear placeholder if invalid
+//     }
+//   } catch (error) {
+//     display.placeholder = ""; // Don't show an error message, just hide it
+//   }
+// }
+
+
 // Clear display
 function clearDisplay() {
   display.value = "";
